@@ -4,7 +4,7 @@
 This repository only has a `gh-pages` branch, which is what you see at the [**CableWeaving site**](http://thedod.github.com/cableweaving).
 
 CableWeaving is not code, but rather journalistic stories -
-based on [CableGate](ihttps://en.wikipedia.org/wiki/United_States_diplomatic_cables_leak) information
+based on [CableGate](https://en.wikipedia.org/wiki/United_States_diplomatic_cables_leak) information
 that was analyzed with a tool called [CableWeaver](http://thedod.github.com/cableweaver).
 
 ### How to contribute
