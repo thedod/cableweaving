@@ -99,8 +99,7 @@ header h2 {
 }
 
 #downloads {
-  display: none;
-  /* margin-bottom: 40px; */
+  margin-bottom: 40px;
 }
 
 a.button {
@@ -354,8 +353,7 @@ footer a:hover {
     padding-bottom: 10px;
   }
   #downloads {
-    display: none;
-    /* margin-bottom: 25px; */
+    margin-bottom: 25px;
   }
   #download-zip, #download-tar-gz {
     display: none;
