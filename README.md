@@ -9,7 +9,7 @@ that was analyzed with a tool called [CableWeaver](http://thedod.github.com/cabl
 
 ### How to contribute
 
-If you find an interesting story line with cableweaver and want to contribute it,
+If you find an interesting story line with cableWeaver and want to contribute it,
 or if you want to add remarks to an existing story,
 feel free to send pull-requests to the `gh-pages` branch.
 
