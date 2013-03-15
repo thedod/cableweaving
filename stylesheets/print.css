@@ -186,12 +186,12 @@ blockquote {
 }
 
 ul li {
-  list-style: disc inside;
-  padding-left: 20px;
+  list-style: disc outside;
+  padding-left: 3px;
 }
 
 ol li {
-  list-style: decimal inside;
+  list-style: decimal outside;
   padding-left: 3px;
 }
 
@@ -224,3 +224,9 @@ footer a {
 .clearfix {display: inline-block;}
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
+
+/* Tweaks */
+sup {
+vertical-align: super;
+font-size: smaller;
+}
