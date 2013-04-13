@@ -378,3 +378,5 @@ sup {
 vertical-align: super;
 font-size: smaller;
 }
+.centered {text-align:center}
+.nofloat {float:none}
