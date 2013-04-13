@@ -380,3 +380,4 @@ font-size: smaller;
 }
 .centered {text-align:center}
 .nofloat {float:none !important}
+.clear {clear:both}
