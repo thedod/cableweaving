@@ -7,5 +7,5 @@ if (urlparts[2]==='bl.ocks.org') {
   } else {
       document.write('<a target="_top" class="button centered" href="'+location.toString()+'">View full screen</a>');
   }
-  <div class="clear"></div>
+  document.write('<div class="clear"></div>');
 }
