@@ -379,4 +379,4 @@ vertical-align: super;
 font-size: smaller;
 }
 .centered {text-align:center}
-.nofloat {float:none}
+.nofloat {float:none !important}
