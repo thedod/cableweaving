@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>CableWeaving workshop - talking points and links</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+* { font-size: 13px;
+  line-height: 17px; }ul.indent { list-style-type: none; }ol { list-style-type: decimal; }ol ol { list-style-type: lower-latin; }ol ol ol { list-style-type: lower-roman; }ol ol ol ol { list-style-type: decimal; }ol ol ol ol ol { list-style-type: lower-latin; }ol ol ol ol ol ol{ list-style-type: lower-roman; }ol ol ol ol ol ol ol { list-style-type: decimal; }ol  ol ol ol ol ol ol ol{ list-style-type: lower-latin; }
+  </style>
+    <link rel="stylesheet" type="text/css" href="http://thedod.github.io/cableweaving/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="http://thedod.github.io/cableweaving/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="http://thedod.github.io/cableweaving/stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src=""></script>
+    <![endif]-->
+    <style type="text/css">
+      ul,ol { margin-right:40px }
+      blockquote { font-size:120% }
+      #main_content { max-width:600px; padding: 0 23px }
+      h3 {color:black}
+    </style>
+
+</head>
+
+<body>
+ <div style="direction:ltr; padding:8px">
+  <h1 style="text-align:center">CableWeaving workshop - talking points and links</h1>
+  <hr>
+  <h3 style="font-size: 1.17em;line-height: 120%;">CableGate and other journalistic treasures</h3>
+  The "<a target="_blank" href=
+  "https://en.wikipedia.org/wiki/United_States_diplomatic_cables_leak">CableGate</a>" leak
+  is a library of 250,000 US diplomatic cables, 2003-2010<br>
+  For comparison, the "Kissinger library" contains 1.7 million declassified documents
+  <a target="_blank" href=
+  "http://wikileaks.org/plusd/">http://wikileaks.org/plusd</a><br>
+  Other libraries <a target="_blank" href=
+  "http://mirror.wikileaks-press.org">http://mirror.wikileaks-press.org</a><br>
+
+  Analysis tools for journalists (general purpose and library-specific)
+  - <a target="_blank" href=
+  "http://wikileaks-press.org/wiki/wiki/tools/">http://wikileaks-press.org/wiki/wiki/tools</a><br>
+  Lots of processing was done specifically on CableGate
+  - <a target="_blank" href=
+  "https://github.com/wlwardiary/cable2graph/wiki/data">https://github.com/wlwardiary/cable2graph/wiki/data</a><br>
+  <br>
+  <h4 style="line-height: 120%;">Why CableGate is the most researched library</h4>
+
+  <ul class="bullet">
+    <li>Cables are [more or less] structured information with rich meta-data</li>
+
+    <li>A formally binding medium: Less chit-chat [than e.g. GIFiles], better signal/noise ratio</li>
+
+    <li>"Big enough" but not "too big" - a prototype for Kissinger library :)</li>
+
+    <li>Quite recent. Refers to events and people that are still relevant</li>
+  </ul>
+
+  <h4 style="line-height: 120%;">How does a cable look like?</h4>
+
+  <ul class="bullet">
+    <li>CableGate "classique": <a target="_blank" href=
+    "https://wikileaks.org/cable/2008/11/08TELAVIV2447.html">https://wikileaks.org/cable/2008/11/08TELAVIV2447.html</a></li>
+
+    <li>PlusD: <a target="_blank" href=
+    "https://wikileaks.org/plusd/cables/08TELAVIV2447_a.html#efmBHcBLB">
+    https://wikileaks.org/plusd/cables/08TELAVIV2447_a.html#efmBHcBLB</a></li>
+
+    <li>2+D: cable "upgrade" bookmarklet <a target="_blank" href=
+    "http://is.gd/2plusd">http://is.gd/2plusd</a></li>
+  </ul>
+
+
+  <h3 style="font-size: 1.17em;line-height: 120%;">"First generation":
+  <a target="_blank" href="http://wlwardiary.github.io/cable2graph">Cable2Graph</a></h3>CableGate
+  analysis using <a target="_blank" href=
+  "https://en.wikipedia.org/wiki/Graph_theory">graph theory</a> methods.<br>
+
+  Cables refer to each other: e.g.
+  <a target="_blank" href=
+  "https://www.wikileaks.org/plusd/cables/08JAKARTA659_a.html#efmAakAdO">
+  https://www.wikileaks.org/plusd/cables/08JAKARTA659_a.html#efmAakAdO</a><br>
+
+  <a target="_blank" href="https://twitter.com/datapornstar">@datapornstar</a> decided to refer to the entire CableGate library as a huge graph where:<br>
+
+  <ul class="bullet">
+    <li>Nodes are cables</li>
+
+    <li>Edges are references (a directed graph - edges pointing backwards in time, but
+    cable2graph treats it as undirected for the sake of community clustering)</li>
+
+    <li>Reference to a cable that isn't in the library is treated as a "missing cable",
+        and much can be learned from the cables refering to it. E.g.
+    <a target="_blank" href= "http://cdpn.io/vkfCw">http://cdpn.io/vkfCw</a></li>
+
+  </ul>
+  <p align="center"><img src="http://zzzen.com/c2g-communities-lens.jpg"/></p>
+
+  <h4 style="line-height: 120%;"><a target="_blank" href="https://github.com/wlwardiary/cable2graph/wiki/observations">Operations</a> cable2graph performs</h4>
+  <ul class="indent">
+    <li>Split graph to <a target="_blank" href=
+    "https://en.wikipedia.org/wiki/Connected_component_%28graph_theory%29">connected components</a></li>
+    <li>Split connected components to "communities" of manageable size. Blondel et al <a target="_blank" href=
+    "http://arxiv.org/abs/0803.0476">http://arxiv.org/abs/0803.0476</a></li>
+    <li>Compute node and edge properties. E.g. <a target="_blank" href="https://en.wikipedia.org/wiki/Pagerank">PageRank</a>, <a target="_blank" href="https://en.wikipedia.org/wiki/Betweenness_Centrality">Betweenness</a></li>
+    <li>Legible and friendly display of result - <a target="_blank" href=
+    "https://dubiousdod.org/fil-mish-mish">https://dubiousdod.org/fil-mish-mish</a></li>
+  </ul>
+  <p>Can also perform other operations (e.g. neighbourhood graphs, TAGS), but it's out of the scope of this talk.</p>
+  <h4 style="line-height: 120%;">The
+  <a target="_blank" href="https://en.wikipedia.org/wiki/Graph_drawing">Graph drawing</a> problem (2D layout)</h4>
+
+  <ul class="bullet">
+    <li>It's still something humans do better than computers</li>
+
+    <li>Requires heavy computation (not practical as a web service)</li>
+  </ul>CableWeaver was created in order to address these problems.<br>
+  <br>
+  <hr>
+
+
+  <h3 style="font-size: 1.17em;line-height: 120%;"></h3>
+
+  <h3 style="font-size: 1.17em;line-height: 120%;"><a target="_blank" href="http://is.gd/CableWeaver">CableWeaver</a> - browser-side semi-manual graph layout</h3><br>
+  <p>An attempt to make cable2graph findings more accessible to journalists and other non-technical researchers</p>
+
+  <ul class="bullet">
+
+    <li>Constantly searching for less geeky journalists and researches to try it and provide feedback. Is being developed in parallel with research (preferably by non-geeks) on actual journalistic stories.</li>
+
+    <li>First stury to be published: <a target="_blank" href=
+    "http://wikileaks-press.org/settlements-cell-phones-and-red-tape/">
+    http://wikileaks-press.org/settlements-cell-phones-and-red-tape</a>
+    based on <a target="_blank" href=
+    "http://bl.ocks.org/5335598">http://bl.ocks.org/5335598</a></li>
+  </ul><br>
+
+  <h4 style="line-height: 120%;">Layout is computed on the browser.
+  </h4>E.g. <a target="_blank" href=
+  "http://thedod.github.io/cableweaver/#58ce93b9f8a77aab243cab354c3aa6b4">
+  http://thedod.github.io/cableweaver/#58ce93b9f8a77aab243cab354c3aa6b4</a><br>
+
+
+  <ul class="bullet">
+    <li>Static site. No computation on the server (less exposure to DoS attack).</li>
+
+    <li>Instead of a long wait in front of an "hourglass" animation - user gets a psychedelic experience :)</li>
+
+    <li>Semi manual intervention allows the software to reach "near optimal" results and trust the user to make it better if needed.</li>
+
+    </ul>
+  <h4 style="line-height: 120%;">Basic user interaction</h4>
+
+  <ul class="bullet">
+    <li>click - Open cable in new tab</li>
+
+    <li>Ctrl-click - Toggle whether cable is selected (part of the <em>story line</em>)</li>
+
+    <li>Shift-click - Toggle manual/automatic layout</li>
+  </ul>
+  <p>The first two operations can also be done from the timeline on the left</p>
+
+    <h4 style="line-height: 120%;">3 steps:</h4>
+    <ol>
+    <li>Search for graphs by MRNs - (Message Reference Numbers, e.g.
+    08JAKARTA659): you can search for cables at <a target="_blank" href=
+    "https://wikileaks.org/plusd">PlusD</a>
+    or <a target="_blank" href=
+    "https://en.wikipedia.org/wiki/Contents_of_the_United_States_diplomatic_cables_leak#Sites_offering_search_capabilities">other cablegate search engines</a>.<br>
+  E.g. a <a target="_blank" href="https://www.cabledrum.net/">search</a> for cables from
+  Israel containing <em>wataniya</em> returns
+  <a target="_blank" href="https://dubiousdod.org/mrn-wataniya.txt">34 results</a></li>
+    <li>Select a graph</li>
+
+    <li>Examine graph</li>
+  </ol>
+
+
+  <h4 style="line-height: 120%;">Additional functionality</h4>
+  <ul class="indent">
+
+    <li>Create a story line from some of the cables in the graph - for example, both
+    <a target="_blank" href=
+    "http://bl.ocks.org/5335598">http://bl.ocks.org/5335598</a> and
+    <a target="_blank" href=
+    "http://bl.ocks.org/5335610">http://bl.ocks.org/5335610</a>
+    are from the same graph</li>
+
+    <li>Share a story line as a permalink (e.g. tweet it)</li>
+
+    <li>Export a story line as an html page. Users can save story line pages at
+    <a target="_blank" href=
+    "https://gist.github.com">https://gist.github.com</a> or
+    <a target="_blank" href="http://codepen.io">http://codepen.io</a></li>
+
+  </ul>
+  <br>
+  <h3 style="font-size: 1.17em;line-height: 120%;"><a target="_blank" href="http://is.gd/CableWeaving">CableWeaving</a> - sample story line repository</h3>
+  <em>Let the audience choose story lines to display</em><br>
+  <br>
+
+  <h3 style="font-size: 1.17em;line-height: 120%;">How to collaborate on a story</h3>
+
+  <ul class="bullet">
+    <li>Codepen is friendly and responsive, but less suitable for long term collaboration (no merge, link sandboxing problems only partially solved)</li>
+
+    <li>You can either create a gist from CableWeaver, or from codepen</li>
+
+    <li>"Informal pull requests". Just tell me and maybe I'll merge your fork ;)</li>
+  </ul><br>
+
+  <h3 style="font-size: 1.17em;line-height: 120%;">How to work on you scoop in secrecy</h3>Install CableWeaver on your computer (avoid snooping):<br>
+  <a target="_blank" href=
+  "https://github.com/thedod/cableweaver/wiki/Installing-on-your-own-server-or-home-computer">
+  https://github.com/thedod/cableweaver/wiki/Installing-on-your-own-server-or-home-computer</a><br>
+
+  <br>
+
+  <h3 style="font-size: 1.17em;line-height: 120%;">Known problems</h3>
+
+  <ul class="bullet">
+    <li>You can't export layout without "locking down" the story line (if you need to select/deselct cables, you'll also need to redo the layout).</li>
+
+    <li>Nodes in story line pages are not links (you only see meta data on hover)</li>
+
+    <li>Most journalists aren't comfy with html (or words like "fork").</li>
+  </ul><br>
+ </div>
+</body>
+</html>

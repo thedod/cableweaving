@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>ראשי פרקים - סדנת טוויית דליפות (CableWeaving)</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+* { font-size: 13px;
+  line-height: 17px; }ul.indent { list-style-type: none; }ol { list-style-type: decimal; }ol ol { list-style-type: lower-latin; }ol ol ol { list-style-type: lower-roman; }ol ol ol ol { list-style-type: decimal; }ol ol ol ol ol { list-style-type: lower-latin; }ol ol ol ol ol ol{ list-style-type: lower-roman; }ol ol ol ol ol ol ol { list-style-type: decimal; }ol  ol ol ol ol ol ol ol{ list-style-type: lower-latin; }
+  </style>
+    <link rel="stylesheet" type="text/css" href="http://thedod.github.io/cableweaving/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="http://thedod.github.io/cableweaving/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="http://thedod.github.io/cableweaving/stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src=""></script>
+    <![endif]-->
+    <style type="text/css">
+      ul,ol { margin-right:40px }
+      blockquote { font-size:120% }
+      #main_content { max-width:600px; padding: 0 23px }
+      h3 {color:black}
+    </style>
+
+</head>
+
+<body>
+ <div style="direction:rtl; padding:8px">
+  <h1 style="text-align:center">סדנת טוויית דליפות (CableWeaving)</h1>
+  <hr>
+  <h3 style="font-size: 1.17em;line-height: 120%;">קייבלגייט
+  ואוצרות עיתונאיים נוספים</h3>הדלפת "<a target="_blank" href=
+  "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%A9%D7%AA_%D7%A7%D7%99%D7%99%D7%91%D7%9C%D7%92%D7%99%D7%99%D7%98">קייבלגייט</a>" היא ספריה של 250,000 מברקים דיפלומטיים, 2003-2010<br>
+  להשוואה, ספריית קיסינג'ר - 1.7 מיליון מסמכים שהחסיון עליהם התיישן
+  <a target="_blank" href=
+  "http://wikileaks.org/plusd/">http://wikileaks.org/plusd</a><br>
+  ספריות נוספות <a target="_blank" href=
+  "http://mirror.wikileaks-press.org">http://mirror.wikileaks-press.org</a><br>
+
+  כלים לכריית מידע (כלליים וייחודיים לספריה מסויימת) עבור עיתונאים
+  - <a target="_blank" href=
+  "http://wikileaks-press.org/wiki/wiki/tools/">http://wikileaks-press.org/wiki/wiki/tools</a><br>
+  בפרט: המון עיבוד נעשה על ספריית קייבלכגייט
+  - <a target="_blank" href=
+  "https://github.com/wlwardiary/cable2graph/wiki/data">https://github.com/wlwardiary/cable2graph/wiki/data</a><br>
+  <br>
+  <h4 style="line-height: 120%;">למה קייבלגייט מעניינת במיוחד
+  למחקר</h4>
+
+  <ul class="bullet">
+    <li>מידע מובנה (מברקים)</li>
+
+    <li>מדיום רשמי ומחייב, פחות קשקשת (יחס אות/רעש)</li>
+
+    <li>גדול מספיק, אבל לא גדול מדי (פרוטוטייפ עבור ספריית
+    קיסינג'ר)</li>
+
+    <li>מתייחס לארועים ואנשים שעדיין רלבנטיים</li>
+  </ul>
+
+  <h4 style="line-height: 120%;">איך נראה מברק קייבלגייט</h4>
+
+  <ul class="bullet">
+    <li>הממשק ה"קלאסי": <a target="_blank" href=
+    "https://wikileaks.org/cable/2008/11/08TELAVIV2447.html">https://wikileaks.org/cable/2008/11/08TELAVIV2447.html</a></li>
+
+    <li>PlusD: <a target="_blank" href=
+    "https://wikileaks.org/plusd/cables/08TELAVIV2447_a.html#efmBHcBLB">
+    https://wikileaks.org/plusd/cables/08TELAVIV2447_a.html#efmBHcBLB</a></li>
+
+    <li>סימניית "שדרוג": <a target="_blank" href=
+    "http://is.gd/2plusd">http://is.gd/2plusd</a></li>
+  </ul>
+
+
+  <h3 style="font-size: 1.17em;line-height: 120%;">"הדור הקודם":
+  <a target="_blank" href="http://wlwardiary.github.io/cable2graph">Cable2Graph</a></h3>ניתוח
+  קייבלגייט בשיטות של <a target="_blank" href=
+  "http://he.wikipedia.org/wiki/%D7%AA%D7%95%D7%A8%D7%AA_%D7%94%D7%92%D7%A8%D7%A4%D7%99%D7%9D">תורת הגרפים</a>.<br>
+
+  במברקים יש התייחסות (reference) למברקים קודמים. לדוגמה:<br>
+  <a target="_blank" href=
+  "https://www.wikileaks.org/plusd/cables/08JAKARTA659_a.html#efmAakAdO">
+  https://www.wikileaks.org/plusd/cables/08JAKARTA659_a.html#efmAakAdO</a><br>
+
+  datapornstar@ החליט להתייחס לספריה בתור גרף ענקי בו<br>
+
+  <ul class="bullet">
+    <li>הצמתים הם מברקים</li>
+
+    <li>הקשתות הן התייחסויות בין מברקים (גרף כיווני, אם כי
+    datapornstar@ מתעלם מהכיווניות ב-cable2graph)</li>
+
+    <li>התייחסות למברק לא קיים בספריה יוצרת צומת שנקרא "מברק חסר".
+    לדוגמה: <a target="_blank" href=
+    "http://cdpn.io/vkfCw">http://cdpn.io/vkfCw</a></li>
+
+  </ul>
+  <p align="center"><img src="http://zzzen.com/c2g-communities-lens.jpg"/></p>
+
+  <h4 style="line-height: 120%;">פעולות ש-cable2graph מבצע</h4>
+  <ul class="indent">
+    <li>חלוקה לרכיבים רציפים <a target="_blank" href=
+    "https://en.wikipedia.org/wiki/Connected_component_%28graph_theory%29">(connected components</a>)</li>
+    <li>חלוקה של רכיב ל"קהילות" Blondel et al <a target="_blank" href=
+    "http://arxiv.org/abs/0803.0476">http://arxiv.org/abs/0803.0476</a></li>
+    <li>חישוב מאפיינים כמו PageRank, Betweenness</li>
+    <li>תצוגה קריאה ואינטראקטיבית. לדוגמה: <a target="_blank" href=
+    "https://dubiousdod.org/fil-mish-mish">https://dubiousdod.org/fil-mish-mish</a></li>
+  </ul>
+  <p>מבצע גם פעולות נוספות (שכונות, תגים)</p>
+  <h4 style="line-height: 120%;">
+  <a target="_blank" href="https://en.wikipedia.org/wiki/Graph_drawing">בעיית הצגת הגרפים</a></h4>
+
+  <ul class="bullet">
+    <li>עדיין משהו שמחשבים פחות טובים בו מאנשים</li>
+
+    <li>דורש הרבה חישוב</li>
+  </ul>בשלב הזה נכנס CableWeaver לתמונה<br>
+  <br>
+  <hr>
+
+
+  <h3 style="font-size: 1.17em;line-height: 120%;"></h3>
+
+  <h3 style="font-size: 1.17em;line-height: 120%;"><a target="_blank" href="http://is.gd/CableWeaver">CableWeaver</a> -
+  "טוויה" ידנית למחצה של גרפים</h3><br>
+  <p>נסיון להפוך את המידע מ-cable2graph נגיש יותר לעיתונאים</p>
+
+  <ul class="bullet">
+
+    <li>הפיתוח נעשה במקביל ליצירת כתבות</li>
+
+    <li>הכתבה הראשונה: <a target="_blank" href=
+    "http://wikileaks-press.org/settlements-cell-phones-and-red-tape/">
+    http://wikileaks-press.org/settlements-cell-phones-and-red-tape</a>
+    על פי <a target="_blank" href=
+    "http://bl.ocks.org/5335598">http://bl.ocks.org/5335598</a></li>
+  </ul><br>
+
+  <h4 style="line-height: 120%;">חישובי הצגת הגרף מתבצעים
+  בדפדפן</h4>לדוגמה: <a target="_blank" href=
+  "http://thedod.github.io/cableweaver/#58ce93b9f8a77aab243cab354c3aa6b4">
+  http://thedod.github.io/cableweaver/#58ce93b9f8a77aab243cab354c3aa6b4</a><br>
+
+
+  <ul class="bullet">
+    <li>לא מעמיס על השרת (מונע התקפות DoS)</li>
+
+    <li>במקום המתנה - המשתמש מקבל חוויה פסיכדלית :)</li>
+
+    <li>יכולת התערבות ידנית</li>
+
+    </ul>
+  <h4 style="line-height: 120%;">פעולות בסיסיות</h4>
+
+  <ul class="bullet">
+    <li>click - פותח את המברק בלשונית חדשה</li>
+
+    <li>Ctrl-click - מסמן מברק כשייך [או לא] ל-"סיפור"</li>
+
+    <li>Shift-click - מקבע [משחרר] את מיקום הגרף (מצב ידני)</li>
+  </ul>
+  <p>את שתי הפעולות הראשונות אפשר לבצע גם מציר הזמן
+  (timeline)</p>
+
+    <h4 style="line-height: 120%;">3 שלבים:</h4>
+    <ol>
+    <li>חיפוש לפי MRN - message Reference Number (למשל
+    08JAKARTA659): אפשר לחפש מברקים ב- <a target="_blank" href=
+    "https://wikileaks.org/plusd">PlusD</a>
+    או <a target="_blank" href=
+    "https://en.wikipedia.org/wiki/Contents_of_the_United_States_diplomatic_cables_leak#Sites_offering_search_capabilities">במקומות אחרים </a>.<br>
+  למשל: <a target="_blank" href="https://www.cabledrum.net/">חיפוש</a> מברקים מישראל שמכילים את המלה Wataniya מביא 
+  <a target="_blank" href="https://dubiousdod.org/mrn-wataniya.txt">34 תוצאות</a></li>
+    <li>בחירת גרף</li>
+
+    <li>עיון</li>
+  </ol>
+
+
+  <h4 style="line-height: 120%;">עזרים נוספים</h4>
+  <ul class="indent">
+
+    <li>בחירת המברקים ששייכים ל"סיפור" (story line) - למשל גם
+    <a target="_blank" href=
+    "http://bl.ocks.org/5335598">http://bl.ocks.org/5335598</a> וגם
+    <a target="_blank" href=
+    "http://bl.ocks.org/5335610">http://bl.ocks.org/5335610</a>
+    קורים באותו גרף</li>
+
+    <li>שיתוף "סיפורים" בעזרת קישור קבוע (אפשר אפילו טוויט)</li>
+
+    <li>ייצוא "סיפורים" כולל נתוני הצגה (layout) ושלד של טקסט בתור
+    דף הטמל. שימוש ב- <a target="_blank" href=
+    "https://gist.github.com">https://gist.github.com</a> או
+    <a target="_blank" href="http://codepen.io">http://codepen.io</a></li>
+
+  </ul>
+  <br>
+  <h3 style="font-size: 1.17em;line-height: 120%;"><a target="_blank" href="http://is.gd/CableWeaving">"סיפורים" לדוגמה</a></h3>
+<p>הבאג בקישור תוקן :)</p>
+  <em>סקירה של חלק מהסיפורים - לפי תחומי
+  ההתעניינות של הקהל</em><br>
+  <br>
+
+  <h3 style="font-size: 1.17em;line-height: 120%;">איך משתפים פעולה
+  בסיפור קיים</h3>
+
+  <ul class="bullet">
+    <li>ניסויים ראשוניים ב codepen</li>
+
+    <li>יצירת גירסה (fork) של gist</li>
+
+    <li>בקשת מיזוג (pull-request) "לא רשמית" ומיזוג</li>
+  </ul><br>
+
+  <h3 style="font-size: 1.17em;line-height: 120%;">איך עובדים על
+  סקופ בחשאיות</h3>מתקינים CableWeaver בבית:<br>
+  <a target="_blank" href=
+  "https://github.com/thedod/cableweaver/wiki/Installing-on-your-own-server-or-home-computer">
+  https://github.com/thedod/cableweaver/wiki/Installing-on-your-own-server-or-home-computer</a><br>
+
+  <br>
+
+  <h3 style="font-size: 1.17em;line-height: 120%;">בעיות
+  ידועות</h3>
+
+  <ul class="bullet">
+    <li>אי אפשר לייצא layout בלי לקבע את ה"סיפור"</li>
+
+    <li>אין קישורים בגרף של "סיפור" (רק מידע כללי במעבר עכבר)</li>
+
+    <li>עיתונאים רבים חוששים מ-html ומילים כמו fork</li>
+  </ul><br>
+ </div>
+</body>
+</html>
